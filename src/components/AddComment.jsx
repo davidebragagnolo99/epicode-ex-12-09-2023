@@ -1,19 +1,19 @@
 import { useEffect, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 
-const AddComment = ({ asin, fetchData }) => {
+const AddComment = (props) => {
   const [comment, setComment] = useState({
     comment: "",
     rate: 1,
-    elementId: asin,
+    elementId: props.asin,
   });
 
   useEffect(() => {
     setComment((prevComment) => ({
       ...prevComment,
-      elementId: asin,
+      elementId: props.asin,
     }));
-  }, [asin]);
+  }, [props.asin]);
 
   const sendComment = async (e) => {
     e.preventDefault();
@@ -32,7 +32,7 @@ const AddComment = ({ asin, fetchData }) => {
         setComment({
           comment: "",
           rate: 1,
-          elementId: asin,
+          elementId: props.asin,
         });
       } else {
         console.log("error");

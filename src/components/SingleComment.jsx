@@ -1,9 +1,9 @@
 import { Button, ListGroup } from "react-bootstrap";
 
-const SingleComment = ({ comment, fetchData }) => {
-  const deleteComment = async (asin) => {
+const SingleComment = (props) => {
+  const deleteComment = async (props) => {
     try {
-      let response = await fetch("https://striveschool-api.herokuapp.com/api/comments/" + asin, {
+      let response = await fetch("https://striveschool-api.herokuapp.com/api/comments/" + props.asin, {
         method: "DELETE",
         headers: {
           Authorization:
@@ -18,7 +18,7 @@ const SingleComment = ({ comment, fetchData }) => {
     } catch (error) {
       alert("Error - comment was NOT deleted!");
     }
-    fetchData.fetchData();
+    props.fetchData();
   };
 
   return (

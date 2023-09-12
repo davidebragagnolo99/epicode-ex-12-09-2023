@@ -40,8 +40,8 @@ const CommentArea = (props) => {
     <div className="text-center">
       {isLoading && <Loading />}
       {isError && <Error />}
-      <AddComment asin={props.asin} fetchData={fetchData} />
-      <CommentList commentsToShow={comments} fetchData={fetchData} />
+      <AddComment asin={props.asin} fetchData={props.fetchData} />
+      <CommentList commentsToShow={props.comments} fetchData={props.fetchData} />
     </div>
   );
 };
