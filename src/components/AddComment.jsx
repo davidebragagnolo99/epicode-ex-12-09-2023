@@ -41,7 +41,7 @@ const AddComment = (props) => {
     } catch (error) {
       console.log("error");
     }
-    fetchData.fetchData();
+    props.fetchData();
   };
 
   return (

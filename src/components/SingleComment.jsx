@@ -23,8 +23,8 @@ const SingleComment = (props) => {
 
   return (
     <ListGroup.Item>
-      {comment.comment}
-      <Button variant="danger" className="ml-2" onClick={() => deleteComment(comment._id)}>
+      {props.comment}
+      <Button variant="danger" className="ml-2" onClick={() => deleteComment(props.comment._id)}>
         Delete
       </Button>
     </ListGroup.Item>
