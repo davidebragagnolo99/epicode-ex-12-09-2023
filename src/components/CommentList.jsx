@@ -1,9 +1,9 @@
 import { ListGroup } from "react-bootstrap";
 import SingleComment from "./SingleComment";
 
-const CommentList = ({ commentsToShow }) => (
+const CommentList = (props) => (
   <ListGroup className="mt-2">
-    {commentsToShow.map((comment) => (
+    {props.commentsToShow.map((comment) => (
       <SingleComment comment={comment} key={comment._id} />
     ))}
   </ListGroup>
